@@ -1,0 +1,59 @@
+{
+    "name": "mongo-sample-app",
+    "version": "0.0.1",
+    "description": "Sample app for mongodb",
+    "main": "dist/src/index.js",
+    "types": "dist/src/index.d.ts",
+    "scripts": {
+        "run": "node ./dist/index.js",
+        "build": "tsc --p tsconfig.json",
+        "start": "npm run build && npm run run --"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/beejones/nodejs-mongo-app"
+    },
+    "keywords": [
+        "mongo"
+    ],
+    "author": "beejones",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jasmine": "^3.10.1",
+        "@types/node": "^16.11.33",
+        "jasmine": "^3.10.0",
+        "jasmine-reporters": "^2.3.2",
+        "jasmine-spec-reporter": "^4.2.1",
+        "jasmine-ts": "0.4.0",
+        "nyc": "^15.1.0",
+        "source-map-support": "^0.5.20",
+        "ts-node": "^10.4.0",
+        "tslint": "^6.1.3",
+        "tslint-config-standard": "^9.0.0",
+        "typescript": "^4.6.4"
+    },
+    "dependencies": {
+        "mongodb": "^4.5.0"
+    },
+    "nyc": {
+        "extension": [
+            ".ts",
+            ".tsx"
+        ],
+        "include": [
+            "src/**"
+        ],
+        "reporter": [
+            "text",
+            "cobertura",
+            "html"
+        ]
+    },
+    "files": [
+        "dist/**",
+        "src/**",
+        "README.md",
+        "LICENSE",
+        "package.json"
+    ]
+}
